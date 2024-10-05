@@ -139,7 +139,7 @@ int main(void)
  8000184:	4a0f      	ldr	r2, [pc, #60]	; (80001c4 <main+0x78>)
  8000186:	6013      	str	r3, [r2, #0]
 	  }
-	  if(minute >= 60) {
+	  if (minute >= 60) {
  8000188:	4b0e      	ldr	r3, [pc, #56]	; (80001c4 <main+0x78>)
  800018a:	681b      	ldr	r3, [r3, #0]
  800018c:	2b3b      	cmp	r3, #59	; 0x3b
@@ -155,7 +155,7 @@ int main(void)
  800019c:	4a0a      	ldr	r2, [pc, #40]	; (80001c8 <main+0x7c>)
  800019e:	6013      	str	r3, [r2, #0]
 	  }
-	  if( hour >=24) {
+	  if (hour >=24) {
  80001a0:	4b09      	ldr	r3, [pc, #36]	; (80001c8 <main+0x7c>)
  80001a2:	681b      	ldr	r3, [r3, #0]
  80001a4:	2b17      	cmp	r3, #23

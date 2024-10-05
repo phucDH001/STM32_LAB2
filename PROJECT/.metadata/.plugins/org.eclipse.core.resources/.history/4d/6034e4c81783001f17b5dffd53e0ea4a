@@ -106,11 +106,11 @@ int main(void)
 		  second = 0;
 		  minute++;
 	  }
-	  if (minute >= 60) {
+	  if(minute >= 60) {
 		  minute = 0;
 		  hour++;
 	  }
-	  if (hour >=24) {
+	  if( hour >=24) {
 		  hour = 0;
 	  }
 	  updateClockBuffer();
