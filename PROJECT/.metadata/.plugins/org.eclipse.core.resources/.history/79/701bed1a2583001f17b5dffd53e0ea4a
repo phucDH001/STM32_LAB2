@@ -46,10 +46,6 @@ TIM_HandleTypeDef htim2;
 const int MAX_LED_MATRIX = 8;
 int index_led_matrix = 0;
 uint8_t matrix_buffer [8] = {0x00, 0x3F, 0x7F, 0xC8, 0xC8, 0x7F, 0x3F, 0x00};
-int pinArr[8] = {
-	ROW7_Pin, ROW6_Pin, ROW5_Pin, ROW4_Pin,
-	ROW3_Pin, ROW2_Pin, ROW1_Pin, ROW0_Pin
-};
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
