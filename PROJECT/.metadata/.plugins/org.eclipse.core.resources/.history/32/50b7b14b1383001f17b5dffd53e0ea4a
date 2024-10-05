@@ -335,48 +335,22 @@ void display7SEG(int num) {
 }
 
 int counter = 50;
-int counter1 = 100;
 int flag = 1;
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
-	switch (flag % 4) {
-		case 0:
-			HAL_GPIO_WritePin(GPIOA, EN_3_Pin, RESET);
-			HAL_GPIO_WritePin(GPIOA, EN_0_Pin, SET);
-			HAL_GPIO_WritePin(GPIOA, EN_1_Pin, SET);
-			HAL_GPIO_WritePin(GPIOA, EN_2_Pin, SET);
-			display7SEG(0);
-			break;
-		case 1:
-			HAL_GPIO_WritePin(GPIOA, EN_0_Pin, RESET);
-			HAL_GPIO_WritePin(GPIOA, EN_1_Pin, SET);
-			HAL_GPIO_WritePin(GPIOA, EN_2_Pin, SET);
-			HAL_GPIO_WritePin(GPIOA, EN_3_Pin, SET);
-			display7SEG(1);
-			break;
-		case 2:
-			HAL_GPIO_WritePin(GPIOA, EN_1_Pin, RESET);
-			HAL_GPIO_WritePin(GPIOA, EN_0_Pin, SET);
-			HAL_GPIO_WritePin(GPIOA, EN_2_Pin, SET);
-			HAL_GPIO_WritePin(GPIOA, EN_3_Pin, SET);
-			display7SEG(2);
-			break;
-		case 3:
-			HAL_GPIO_WritePin(GPIOA, EN_2_Pin, RESET);
-			HAL_GPIO_WritePin(GPIOA, EN_0_Pin, SET);
-			HAL_GPIO_WritePin(GPIOA, EN_1_Pin, SET);
-			HAL_GPIO_WritePin(GPIOA, EN_3_Pin, SET);
-			display7SEG(3);
-			break;
+	if (flag) {
+		HAL_GPIO_WritePin(GPIOA, EN_0_Pin, RESET);
+		HAL_GPIO_WritePin(GPIOA, EN_1_Pin, SET);
+		display7SEG(1);
+	}
+	else {
+		HAL_GPIO_WritePin(GPIOA, EN_1_Pin, RESET);
+		HAL_GPIO_WritePin(GPIOA, EN_0_Pin, SET);
+		display7SEG(2);
 	}
 	counter--;
-	counter1--;
 	if (counter <= 0) {
 		counter = 50;
-		flag++;
-	}
-	if (counter1 <= 0) {
-		counter1 = 100;
-		HAL_GPIO_TogglePin(GPIOA, DOT_Pin);
+		flag = 1 - flag;
 	}
 }
 /* USER CODE END 4 */
