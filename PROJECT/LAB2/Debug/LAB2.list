@@ -117,7 +117,7 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  second ++;
+	  second++;
  8000166:	4b16      	ldr	r3, [pc, #88]	; (80001c0 <main+0x74>)
  8000168:	681b      	ldr	r3, [r3, #0]
  800016a:	3301      	adds	r3, #1
@@ -170,7 +170,7 @@ int main(void)
 	  HAL_Delay(1000);
  80001b2:	f44f 707a 	mov.w	r0, #1000	; 0x3e8
  80001b6:	f000 fc9f 	bl	8000af8 <HAL_Delay>
-	  second ++;
+	  second++;
  80001ba:	e7d4      	b.n	8000166 <main+0x1a>
  80001bc:	20000050 	.word	0x20000050
  80001c0:	20000018 	.word	0x20000018
