@@ -213,9 +213,9 @@ int main(void)
  8000210:	f7ff ff9c 	bl	800014c <setTimer>
   while (1)
   {
-	  if (timer_flag[1] == 1) {
+	  if (timer_flag[0] == 1) {
  8000214:	4b22      	ldr	r3, [pc, #136]	; (80002a0 <main+0xb8>)
- 8000216:	685b      	ldr	r3, [r3, #4]
+ 8000216:	681b      	ldr	r3, [r3, #0]
  8000218:	2b01      	cmp	r3, #1
  800021a:	d10b      	bne.n	8000234 <main+0x4c>
 		  update7SEG(index_led++);
@@ -231,9 +231,9 @@ int main(void)
  800022e:	2000      	movs	r0, #0
  8000230:	f7ff ff8c 	bl	800014c <setTimer>
 	  }
-	  if (timer_flag[0] == 1) {
+	  if (timer_flag[1] == 1) {
  8000234:	4b1a      	ldr	r3, [pc, #104]	; (80002a0 <main+0xb8>)
- 8000236:	681b      	ldr	r3, [r3, #0]
+ 8000236:	685b      	ldr	r3, [r3, #4]
  8000238:	2b01      	cmp	r3, #1
  800023a:	d1eb      	bne.n	8000214 <main+0x2c>
 		  HAL_GPIO_TogglePin(DOT_GPIO_Port, DOT_Pin);
@@ -294,7 +294,7 @@ int main(void)
  8000290:	f44f 717a 	mov.w	r1, #1000	; 0x3e8
  8000294:	2001      	movs	r0, #1
  8000296:	f7ff ff59 	bl	800014c <setTimer>
-	  if (timer_flag[1] == 1) {
+	  if (timer_flag[0] == 1) {
  800029a:	e7bb      	b.n	8000214 <main+0x2c>
  800029c:	2000005c 	.word	0x2000005c
  80002a0:	20000054 	.word	0x20000054
