@@ -414,14 +414,20 @@ void updateClockBuffer() {
 }
 
 int counter = 25;
+int counter1 = 100;
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
 	timer_run();
 
 	update7SEG(index_led);
 	counter--;
+	counter1--;
 	if (counter <= 0) {
 		counter = 25;
 		update7SEG(index_led++);
+	}
+	if (counter1 <= 0) {
+		counter1 = 100;
+		HAL_GPIO_TogglePin(GPIOA, DOT_Pin);
 	}
 }
 /* USER CODE END 4 */
