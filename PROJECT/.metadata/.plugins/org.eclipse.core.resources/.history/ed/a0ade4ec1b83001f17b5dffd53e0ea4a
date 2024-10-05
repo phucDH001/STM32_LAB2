@@ -115,7 +115,6 @@ int main(void)
   while (1)
   {
 	  if (timer0_flag == 1) {
-		  HAL_GPIO_TogglePin(DOT_GPIO_Port, DOT_Pin);
 		  second++;
 		  if (second >= 60) {
 			  second = 0;
